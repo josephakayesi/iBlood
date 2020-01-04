@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SafeAreaView, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { SafeAreaView, StyleSheet, Image, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native'
 import * as Font from 'expo-font'
 import * as shape from 'd3-shape'
 import { LineChart, Path } from 'react-native-svg-charts'
@@ -152,7 +152,8 @@ class App extends Component {
         if (!this.state.fontsLoaded) {
             return (
                 <Block center middle>
-                    <Text>Loading...</Text>
+                    {/* <Text>Loading...</Text> */}
+                    <ActivityIndicator size="large" color="#D61B1F" />
                 </Block>
             )
         }
