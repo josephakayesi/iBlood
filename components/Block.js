@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.75,
         shadowRadius: 10,
-        elevation: 3
+        elevation: 0.2
     },
     accent: {
         backgroundColor: theme.colors.accent
