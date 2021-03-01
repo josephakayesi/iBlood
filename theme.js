@@ -27,14 +27,14 @@ const sizes = {
 
 const fonts = {
     h1: {
-        fontFamily: 'Montserrat-Bold',
+        fontFamily: MontserratBold,
         fontSize: sizes.h1
     },
     h2: {
         fontSize: sizes.h2
     },
     h3: {
-        fontFamily: 'Montserrat-SemiBold',
+        fontFamily: MontserratSemiBold,
         fontSize: sizes.h3
     },
     title: {
@@ -44,7 +44,7 @@ const fonts = {
         fontSize: sizes.body
     },
     caption: {
-        fontFamily: 'Montserrat-Bold',
+        fontFamily: MontserratBold,
         fontSize: sizes.caption
     },
     small: {

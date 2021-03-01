@@ -75,10 +75,10 @@ const styles = StyleSheet.create({
     },
     shadow: {
         shadowColor: theme.colors.black,
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.75,
-        shadowRadius: 10,
-        elevation: 0.2
+        shadowOffset: { width: 0, height: 1},
+        shadowOpacity: 0.05,
+        shadowRadius: 1,
+        elevation: 0.05
     },
     accent: {
         backgroundColor: theme.colors.accent

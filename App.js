@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { SafeAreaView, StyleSheet, Image, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native'
+import { SafeAreaView, StyleSheet, Image, TouchableOpacity, ScrollView, ActivityIndicator, AppRegistry } from 'react-native'
 import * as Font from 'expo-font'
 import * as shape from 'd3-shape'
 import { LineChart, Path } from 'react-native-svg-charts'
@@ -14,20 +14,22 @@ class App extends Component {
         fontsLoaded: false,
     }
 
-    loadFonts() {
-        return Font.loadAsync({
-            'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
-            'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
-            'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
-            'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
-            'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
-            'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf')
-        })
+    async loadFonts() {
+       await Font.loadAsync({
+        'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
+        'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+        'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
+        'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
+        'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
+        'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf')
+    })
+       this.setState({ fontsLoaded: true })
     }
 
+    
+
     async componentDidMount() {
-        await this.loadFonts()
-        this.setState({ fontsLoaded: true })
+        this.loadFonts()
     }
 
     renderChart() {
@@ -101,7 +103,7 @@ class App extends Component {
                         {this.renderChart()}
                     </Block>
                 </Block>
-            </Block >
+            </Block>
         )
     }
 
@@ -150,6 +152,8 @@ class App extends Component {
 
     render() {
         if (!this.state.fontsLoaded) {
+            console.log("Checking")
+            console.log(this.state.fontsLoaded)
             return (
                 <Block center middle>
                     {/* <Text>Loading...</Text> */}
@@ -171,6 +175,8 @@ App.defaultProps = {
     requests: mocks.requests,
     chart: mocks.chart
 }
+
+// AppRegistry.registerComponent('iBlood', App)
 
 export default App
 
