@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { SafeAreaView, StyleSheet, Image, TouchableOpacity, ScrollView, ActivityIndicator, AppRegistry } from 'react-native'
+import {registerRootComponent} from "expo"
 import * as Font from 'expo-font'
 import * as shape from 'd3-shape'
 import { LineChart, Path } from 'react-native-svg-charts'
@@ -176,8 +177,9 @@ App.defaultProps = {
     chart: mocks.chart
 }
 
-// AppRegistry.registerComponent('iBlood', App)
+AppRegistry.registerComponent('main', () => App)
 
+// registerRootComponent(App)
 export default App
 
 const styles = StyleSheet.create({
